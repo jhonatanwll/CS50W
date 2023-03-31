@@ -1,0 +1,26 @@
+.container {
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keepongoing, .failure, .sucess {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.sucess {
+  background-color: green;
+}
+
+.failure {
+  background-color: red;
+}
+
+.keepongoing {
+  background-color: lightblue;
+}
+
+/*# sourceMappingURL=inheritance.css.map */

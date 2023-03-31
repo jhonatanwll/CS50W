@@ -1,0 +1,28 @@
+%container {
+	padding: 20px;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+}
+%row {
+	border: 1px solid black;
+	padding: 20px;
+	margin: 20px;
+}
+
+.container{
+	@extend %container;
+}
+
+.sucess {
+	@extend %row;
+	background-color: green;
+}
+.failure {
+	@extend %row;
+	background-color: red;
+}
+.keepongoing {
+	@extend %row;
+	background-color: lightblue;
+}
