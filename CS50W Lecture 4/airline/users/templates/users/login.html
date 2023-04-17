@@ -2,6 +2,14 @@
 
 {% block body %}
 
+{% if message == "valid" %}
+<div>{{ message }}</div>
+{% else %}
+<div>{{ message }}</div>
+{% endif %}
+
+
+
 <form action="{% url 'login' %}" method="post">
  {% csrf_token %}
  <input type="text" name="username" placeholder=" Username">
