@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 	<head>
 		<title> Hello </title>
 		<script>
-			alert("Hello, World!");
+			function hello() {
+				document.querySelector('h1').innerHTML = "Hi!";
+			}
 		</script>
 	</head>
+
 	<body>
 		<h1> Hello! </h1>
+		<button onclick="hello() ">Click Here!</buttononclick>
 	</body>
+
 </html>
