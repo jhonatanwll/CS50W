@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title> Lecture 5: Complete learning </title>
+		<script>
+
+			let counter = 0;
+			function count() {
+				counter++;
+				const countText = document.querySelector('h2');
+				countText.innerHTML = `Count: ${counter}`;
+				if (counter % 10 === 0) {
+					alert(`The counter is ${counter}!`);
+				}
+			}
+
+
+			function hello() {
+				const heading = document.querySelector('h1');
+				if (heading.innerHTML === 'Hello!') {
+					heading.innerHTML = "Goodbye!";
+				} else {
+					heading.innerHTML = "Hello!";
+				}
+
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Hello!</h1>
+		<button onclick="hello() ">Hi/Bye Button!!</button>
+
+		<h2>Count: 0</h2>
+		<button onclick="count() ">Count!</button>
+	</body>
+
+</html>
