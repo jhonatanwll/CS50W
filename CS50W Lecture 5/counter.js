@@ -18,26 +18,29 @@ function count() {
     counter = 0;
   }
   counter++;
-  const countText = document.querySelector("h2");
+  const countText = document.querySelector("#monthText");
   countText.innerHTML = `Mês: ${counter}, Elemento: ${elementos[counter - 1]} `;
+  alert("Month OK!");
 }
 
-function sol() {
-  const heading = document.querySelector("h1");
+function switchSolLua() {
+  const heading = document.querySelector("#solluaText");
   if (heading.innerHTML === "Sol!") {
     heading.innerHTML = "Lua!";
   } else {
     heading.innerHTML = "Sol!";
   }
+  alert("Switch OK!");
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector("button").onclick = count;
+  document.querySelector("#solluaButton").onclick = switchSolLua;
+  document.querySelector("#monthButton").onclick = count;
 });
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("form").onsubmit = function () {
-    const name = document.querySelector("#name").value;
+    const name = document.querySelector("#nameButton").value;
     alert(`Hello, ${name}!`);
   };
 });
