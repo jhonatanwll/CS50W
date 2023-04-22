@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html land="en">
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+   // Change font color to red
+   document.querySelectorAll('button').forEach(function (button) {
+    button.onclick = function () {
+     document.querySelector('#hello').style.color = button.dataset.color;
+    };
+   });
+  });
+ </script>
 
  <head>
   <title>Colors</title>
@@ -7,9 +18,9 @@
 
  <body>
   <h1 id="hello">Hello!</h1>
-  <button>Red</button>
-  <button>Blue</button>
-  <button>Green</button>
+  <button data-color="red">Red</button>
+  <button data-color="blue">Blue</button>
+  <button data-color="green">Green</button>
  </body>
 
 </html>
