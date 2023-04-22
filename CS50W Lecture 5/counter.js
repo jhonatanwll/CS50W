@@ -30,6 +30,14 @@ function sol() {
     heading.innerHTML = "Sol!";
   }
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("button").onclick = count;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector("form").onsubmit = function () {
+    const name = document.querySelector("#name").value;
+    alert(`Hello, ${name}!`);
+  };
 });
