@@ -1,4 +1,6 @@
-let counter = 0;
+if (!localStorage.getItem("counter")) {
+  localStorage.setItem("counter", 0);
+}
 let elementos = {
   1: "Primeiro tempo da Terra",
   2: "Primeiro tempo do Ar",
@@ -16,16 +18,22 @@ let elementos = {
 
 // MONTHS BUTTON
 function count() {
+  let counter = localStorage.getItem("counter");
   if (counter == 12) {
     counter = 0;
   }
   counter++;
   const countText = document.querySelector("#monthText");
   countText.innerHTML = `Mês: ${counter}, Elemento: ${elementos[counter]} `;
+  localStorage.setItem("counter", counter);
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-  const buttonCount = document.querySelector("#monthButton");
-  buttonCount.onclick = count;
+  let counter = localStorage.getItem("counter");
+  document.querySelector(
+    "#monthText"
+  ).innerHTML = `Mês: ${counter}, Elemento: ${elementos[counter]} `;
+  document.querySelector("#monthButton").onclick = count;
 });
 
 // SWITCH
@@ -61,6 +69,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //TASKS LIST
 document.addEventListener("DOMContentLoaded", function () {
+  // By default, submit button is disabled
+  document.querySelector("#submitTask").disabled = true;
+
+  document.querySelector("#task").onkeyup = () => {
+    if (document.querySelector("#task").value.length > 0) {
+      document.querySelector("#submitTask").disabled = false;
+    } else {
+      document.querySelector("#submitTask").disabled = true;
+    }
+  };
+
   document.querySelector("#formTasks").onsubmit = () => {
     const task = document.querySelector("#task").value;
     console.log(task);
@@ -68,7 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let li = document.createElement("li");
     li.innerHTML = task;
 
-    document.querySelector("#formTasks").append(li);
+    document.querySelector("#tasks").append(li);
+
+    document.querySelector("#task").value = "";
+    document.querySelector("#submitTask").disabled = true;
 
     // Stop form from submitting
     return false;
