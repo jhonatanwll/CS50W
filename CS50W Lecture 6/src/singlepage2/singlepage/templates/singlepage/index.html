@@ -14,6 +14,7 @@
         fetch(`/sections/${section}`)
           .then(response => response.text())
           .then(text => {
+            console.log(text);
             document.querySelector('#content').innerHTML = text;
           })
       }
@@ -24,7 +25,6 @@
             const section = this.dataset.section;
             history.pushState({ section: section }, "", `section${section}`);
             showSection(section);
-            console.log(section);
           };
         });
       });
