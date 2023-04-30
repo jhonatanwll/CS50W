@@ -5,6 +5,15 @@
   <title>Animation!!</title>
 
   <style>
+   .post {
+    background-color: blueviolet;
+    padding: 20px;
+    margin-bottom: 10px;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-play-state: paused;
+   }
+
    @keyframes move {
     0% {
      left: 0%;
@@ -45,7 +54,7 @@
  </head>
 
  <body>
-  <h1>Welcome</h1>
+  <h1 class="post">Welcome</h1>
   <button>Move Things!</button>
  </body>
 
