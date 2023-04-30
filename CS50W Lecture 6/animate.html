@@ -5,25 +5,21 @@
   <title>Animation!!</title>
 
   <style>
-   @keyframes shrink {
-    0% {
-     font-size: 400px;
+   @keyframes move {
+    from {
+     left: 0%;
     }
 
-    3% {
-     font-size: 100px;
-
-    }
-
-    100% {
-     font-size: 20px;
+    to {
+     left: 50%;
     }
 
    }
 
    h1 {
-    animation-name: shrink;
-    animation-duration: 10s;
+    position: relative;
+    animation-name: move;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
    }
   </style>
