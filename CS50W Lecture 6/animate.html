@@ -35,20 +35,31 @@
     const h1 = document.querySelector('.post');
     h1.style.animationPlayState = 'paused';
 
-    document.querySelector('button').onclick = () => {
-     if (h1.style.animationPlayState === 'paused') {
-      h1.style.animationPlayState = 'running';
-     } else {
-      h1.style.animationPlayState = 'paused';
+    document.querySelectorAll('button').forEach(button => {
+     button.onclick = function () {
+      if (h1.style.animationPlayState === 'paused') {
+       this.parentElement.style.animationPlayState = 'running';
+      } else {
+       this.parentElement.style.animationPlayState = 'paused';
+
+      }
      }
-    }
+    })
    })
+
+
   </script>
  </head>
 
  <body>
-  <h1 class="post">Welcome</h1>
-  <button>Move Things!</button>
+  <div class="post">
+   <h1>Welcome</h1>
+   <button>Hide Things 1!</button>
+  </div>
+  <div class="post">
+   <h1>Welcome</h1>
+   <button>Hide Things 2!</button>
+  </div>
  </body>
 
 </html>
