@@ -22,15 +22,31 @@
    h1 {
     position: relative;
     animation-name: move;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-iteration-count: 3;
    }
   </style>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const h1 = document.querySelector('h1');
+    h1.style.animationPlayState = 'paused';
+
+    document.querySelector('button').onclick = () => {
+     if (h1.style.animationPlayState === 'paused') {
+      h1.style.animationPlayState = 'running';
+     } else {
+      h1.style.animationPlayState = 'paused';
+     }
+    }
+   })
+  </script>
  </head>
 
  <body>
-  <h1>Welcome!</h1>
+  <h1>Welcome</h1>
+  <button>Move Things!</button>
  </body>
 
 </html>
