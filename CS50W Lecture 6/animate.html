@@ -12,34 +12,27 @@
     animation-name: hide;
     animation-duration: 2s;
     animation-play-state: paused;
+    animation-iteration-count: infinite;
    }
 
-   @keyframes move {
+   @keyframes hide {
     0% {
-     left: 0%;
+     opacity: 1;
     }
 
     50% {
-     left: 20%;
+     opacity: 0;
     }
 
     100% {
-     left: 0%;
+     left: 1;
     }
-   }
-
-   h1 {
-    position: relative;
-    animation-name: move;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 3;
    }
   </style>
 
   <script>
    document.addEventListener('DOMContentLoaded', function () {
-    const h1 = document.querySelector('h1');
+    const h1 = document.querySelector('.post');
     h1.style.animationPlayState = 'paused';
 
     document.querySelector('button').onclick = () => {
