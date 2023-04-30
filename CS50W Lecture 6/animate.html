@@ -6,21 +6,25 @@
 
   <style>
    @keyframes move {
-    from {
+    0% {
      left: 0%;
     }
 
-    to {
-     left: 50%;
+    50% {
+     left: 20%;
     }
 
+    100% {
+     left: 0%;
+    }
    }
 
    h1 {
     position: relative;
     animation-name: move;
-    animation-duration: 3s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
+    animation-iteration-count: 3;
    }
   </style>
  </head>
