@@ -10,13 +10,8 @@
      opacity: 1;
     }
 
-    50% {
-     opacity: 0;
-
-    }
-
     100% {
-     opacity: 1;
+     opacity: 0;
 
 
     }
@@ -37,10 +32,10 @@
    document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', event => {
      const element = event.target;
-     element.parentElement.addEventListener('animationended', () => {
-      element.parentElement.remove
-     })
      element.parentElement.style.animationPlayState = 'running'
+     element.parentElement.addEventListener('animationend', () => {
+      element.parentElement.remove();
+     })
     })
 
    })
