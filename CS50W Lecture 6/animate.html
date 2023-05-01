@@ -29,7 +29,7 @@
     animation-name: hide;
     animation-duration: 2s;
     animation-play-state: paused;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 2;
    }
   </style>
 
@@ -42,6 +42,9 @@
      } else {
       element.parentElement.style.animationPlayState = 'running'
      }
+     element.parentElement.addEventListener('animationended', () => {
+      element.parentElement.remove();
+     })
     })
 
    })
