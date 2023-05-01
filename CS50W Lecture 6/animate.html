@@ -29,7 +29,7 @@
     animation-name: hide;
     animation-duration: 2s;
     animation-play-state: paused;
-    animation-iteration-count: 2;
+    animation-iteration-count: 1;
    }
   </style>
 
@@ -37,14 +37,10 @@
    document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', event => {
      const element = event.target;
-     if (element.parentElement.style.animationPlayState === 'running') {
-      element.parentElement.style.animationPlayState = 'paused'
-     } else {
-      element.parentElement.style.animationPlayState = 'running'
-     }
      element.parentElement.addEventListener('animationended', () => {
-      element.parentElement.remove();
+      element.parentElement.remove
      })
+     element.parentElement.style.animationPlayState = 'running'
     })
 
    })
