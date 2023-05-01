@@ -5,16 +5,6 @@
   <title>Animation!!</title>
 
   <style>
-   .post {
-    background-color: blueviolet;
-    padding: 20px;
-    margin-bottom: 10px;
-    animation-name: hide;
-    animation-duration: 2s;
-    animation-play-state: paused;
-    animation-iteration-count: infinite;
-   }
-
    @keyframes hide {
     0% {
      opacity: 1;
@@ -25,24 +15,34 @@
     }
 
     100% {
-     left: 1;
+     opacity: 1;
     }
+   }
+
+   .post {
+    background-color: blueviolet;
+    padding: 20px;
+    margin-bottom: 10px;
+    animation-name: hide;
+    animation-duration: 2s;
+    animation-play-state: paused;
+    animation-iteration-count: infinite;
    }
   </style>
 
   <script>
    document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('button').forEach(button => {
+    document.addEventListener('click', event => {
+     const element = event.target;
+     if (element.parentElement.style.animationPlayState === 'running') {
+      element.parentElement.style.animationPlayState = 'paused'
+     } else {
+      element.parentElement.style.animationPlayState = 'running'
+     }
+    })
 
-     button.onclick = function () {
-      if (this.parentElement.style.animationPlayState = 'paused') {
-       this.parentElement.style.animationPlayState = 'running';
-      } else {
-       this.parentElement.style.animationPlayState = 'paused';
-      }
-     };
-    });
-   });
+   })
+
 
 
   </script>
@@ -51,11 +51,11 @@
  <body>
   <div class="post">
    <h1>Welcome</h1>
-   <button>Hide Things 1!</button>
+   <button class="postButton">Hide Things 1!</button>
   </div>
   <div class="post">
    <h1>Welcome</h1>
-   <button>Hide Things 2!</button>
+   <button class="postButton">Hide Things 2!</button>
   </div>
  </body>
 
