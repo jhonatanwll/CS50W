@@ -24,10 +24,28 @@
      response: ""
     })
 
+    function updateResponse(event) {
+     setState({
+      ...state,
+      response: event.target.value
+     })
+    }
+
+    function inputKeyPress(event) {
+     if (event.key === "Enter") {
+      const answer = parseInt(state.response);
+      if (state.num1 + state.num2 === answer) {
+       // User got question right
+      } else {
+       // User got the question wrong
+      }
+     }
+    }
+
     return (
      <div>
       <div>{state.num1} + {state.num2}</div>
-      <input value={state.response} />
+      <input onKeyPress={inputKeyPress} onChange={updateResponse} value={state.response()} />
      </div>
     )
    }
