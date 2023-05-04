@@ -5,7 +5,7 @@
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <title>Counter</title>
+  <title>Addition</title>
  </head>
 
  <body>
@@ -14,15 +14,22 @@
   <script type="text/babel">
 
    function App() {
-    <div>
-     return (
-     <div>
-      <div>1 +2</div>
-      <input />
-     </div>
-     )
-    </div>
 
+    const [num1, setNum1] = React.useState(1);
+    const [num2, setNum2] = React.useState(2);
+
+    const [state, setState] = React.useState({
+     num1: 4,
+     num2: 3,
+     response: ""
+    })
+
+    return (
+     <div>
+      <div>{state.num1} + {state.num2}</div>
+      <input value={state.response} />
+     </div>
+    )
    }
 
    ReactDOM.render(<App />, document.querySelector("#app"));
