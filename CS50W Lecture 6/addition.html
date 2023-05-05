@@ -19,6 +19,12 @@
    .incorrect {
     color: red;
    }
+
+   #winner {
+    margin-top: 72px;
+    color: aqua;
+    font-size: 72px;
+   }
   </style>
  </head>
 
@@ -47,7 +53,8 @@
         num1: Math.ceil(Math.random() * 10),
         num2: Math.ceil(Math.random() * 10),
         score: state.score + 1,
-        response: ""
+        response: "",
+        incorrect: false
 
        });
       } else {
@@ -55,21 +62,15 @@
        let addition = 0;
        if (state.score <= 0) {
         addition = 0;
-        setState({
-         ...state,
-         score: addition,
-         response: "",
-         incorrect: false
-        });
        } else {
         addition = state.score - 1;
-        setState({
-         ...state,
-         score: addition,
-         response: "",
-         incorrect: true
-        });
        }
+       setState({
+        ...state,
+        score: addition,
+        response: "",
+        incorrect: true
+       });
       }
      }
     }
@@ -81,6 +82,11 @@
      });
     }
 
+    if (state.score === 10) {
+     return (
+      <div id="winner">You Won the Game!!</div>
+     )
+    }
 
     return (
      <div>
