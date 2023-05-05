@@ -29,7 +29,11 @@
        // User got the question right
        setState({
         ...state,
-        score: state.score + 1
+        num1: Math.ceil(Math.random() * 10),
+        num2: Math.ceil(Math.random() * 10),
+        score: state.score + 1,
+        response: ""
+
        });
       } else {
        // User got the question wrong
@@ -40,9 +44,9 @@
        }
        setState({
         ...state,
-        score: state.score
+        score: state.score,
+        response: ""
        });
-
       }
      }
     }
