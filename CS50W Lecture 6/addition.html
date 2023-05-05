@@ -55,14 +55,21 @@
        let addition = 0;
        if (state.score <= 0) {
         addition = 0;
+        setState({
+         ...state,
+         score: addition,
+         response: "",
+         incorrect: false
+        });
        } else {
         addition = state.score - 1;
+        setState({
+         ...state,
+         score: addition,
+         response: "",
+         incorrect: true
+        });
        }
-       setState({
-        ...state,
-        score: addition,
-        response: "",
-       });
       }
      }
     }
@@ -77,7 +84,7 @@
 
     return (
      <div>
-      <div class={state.incorrect ? "incorrect" : ""} id="question">{state.num1} + {state.num2}</div>
+      <div className={state.incorrect ? "incorrect" : ""} id="question">{state.num1} + {state.num2}</div>
       <input autoFocus={true} onKeyPress={inputKeyPress} onChange={updateResponse} value={state.response} />
       <div>Score: {state.score}</div>
      </div>
