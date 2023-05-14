@@ -19,20 +19,20 @@ class WebpageTests(unittest.TestCase):
         driver.get(file_uri("counter.html"))
         increase = driver.find_element("id", "increase")
         increase.click()
-        self.assertEqual(driver.find_element("tag", "h1").text, "1")
+        self.assertEqual(driver.find_element("tag name", "h1").text, "1")
 
     def test_decrease(self):
         driver.get(file_uri("counter.html"))
         decrease = driver.find_element("id", "decrease")
         decrease.click()
-        self.assertEqual(driver.find_element("tag", "h1").text, "-1")
+        self.assertEqual(driver.find_element("tag name", "h1").text, "-1")
 
     def test_multiple_increase(self):
         driver.get(file_uri("counter.html"))
         increase = driver.find_element("id", "increase")
         for i in range(3):
             increase.click()
-        self.assertEqual(driver.find_element("tag", "h1").text, "3")
+        self.assertEqual(driver.find_element("tag name", "h1").text, "3")
 
 if __name__ == "__main__":
     unittest.main()
